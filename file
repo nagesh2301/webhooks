@@ -38,14 +38,6 @@ pipeline
             
         }
         
-        stage('continuousDelivery')
-        {
-            steps
-            {
-                input message: 'needed approval from DM', submitter: 'intelliqit'
-                deploy adapters: [tomcat9(credentialsId: '3a8c23d5-8155-407a-9854-e74a93569660', path: '', url: 'http://172.31.94.84:8080')], contextPath: 'prodapp1', war: '**/*.war'
-            }
-        }
-        
+      
     }
 }
